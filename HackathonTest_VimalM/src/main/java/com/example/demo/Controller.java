@@ -15,6 +15,15 @@ public class Controller {
 	
 	@Autowired
 	Billrepo repo;
+	
+	
+	@RequestMapping(path="" ,method=RequestMethod.GET)
+     public ModelAndView ind(Model model){
+			//ModelAndView model=new ModelAndView("index.html.txt");
+			return new ModelAndView("index2.html");
+		}
+	
+	
 	@RequestMapping(path="/bills" ,method=RequestMethod.GET)
 	public List<BillPOJO> GetAll() {
 		return repo.findAll();
