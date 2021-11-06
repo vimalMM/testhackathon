@@ -24,12 +24,7 @@ public class Controller {
 			return new ModelAndView("index2.html");
 		}
 		
-	/*	return "Welcome to Bill  Maintenance Project by Vimal.M"+"\n"+
-	           "Use /get to fetch all bills"+"\n"+
-	          "Use /get/id to fetch  bill by ID"
-	          +"\n"+
-	          "Use /get/due/date to fetch  bill by date";
-	          */
+	
 	
 	@RequestMapping(path="/bills" ,method=RequestMethod.GET)
 	public List<BillPOJO> GetAll() {
@@ -39,7 +34,7 @@ public class Controller {
 	public BillPOJO Get(@PathVariable Long id) {
 		return repo.findById(id).get();
 	}
-	@RequestMapping(path="/bills/due/data/{BilledDate}" ,method=RequestMethod.GET)
+	@RequestMapping(path="/bills/due/date/{BilledDate}" ,method=RequestMethod.GET)
 	public List<BillPOJO> Get(@PathVariable String BilledDate) {
 		return repo.findByBilledDate(BilledDate);
 	}
