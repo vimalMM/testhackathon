@@ -23,7 +23,7 @@ public class Controller {
 	public BillPOJO Get(@PathVariable Long id) {
 		return repo.findById(id).get();
 	}
-	@RequestMapping(path="/bills/due/data/{BilledDate}" ,method=RequestMethod.GET)
+	@RequestMapping(path="/bills/due/date/{BilledDate}" ,method=RequestMethod.GET)
 	public List<BillPOJO> Get(@PathVariable String BilledDate) {
 		return repo.findByBilledDate(BilledDate);
 	}
